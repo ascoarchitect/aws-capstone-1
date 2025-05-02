@@ -52,3 +52,9 @@ variable "desired_capacity" {
   description = "Desired capacity of the Auto Scaling Group"
   type        = number
 }
+
+variable "ami_name_pattern" {
+  description = "Pattern to use when searching for AMIs"
+  type        = string
+  default     = "space-invaders-ami-*"
+}

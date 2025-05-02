@@ -4,7 +4,6 @@
 region = "eu-west-1"  # Ireland region
 
 # Project metadata
-project_name = "space-invaders-game" # Name of the project
 environment  = "dev" # Environment (dev, test, prod, etc.)
 
 # Network configuration

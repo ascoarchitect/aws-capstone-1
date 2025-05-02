@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Git repo URL is passed as an environment variable
+# GIT_REPO_URL
+
 # Update system packages
 sudo yum update -y
 
@@ -11,12 +14,15 @@ sudo yum install -y httpd git
 sudo systemctl start httpd
 sudo systemctl enable httpd
 
-# Create a temporary directory and clone the repo there
+# Create a temporary directory for Git operations
 TEMP_DIR=$(mktemp -d)
 cd "$TEMP_DIR"
-git clone https://github.com/drehnstrom/space-invaders .
 
-# Copy the files to the web server root (without .git directory)
+# Clone the repository using the passed URL
+echo "Cloning repository: $GIT_REPO_URL"
+git clone "$GIT_REPO_URL" .
+
+# Copy the application to the web server root
 sudo rm -f /var/www/html/index.html
 sudo cp -R * /var/www/html/
 
@@ -31,4 +37,4 @@ echo "<html><body><h1>Health Check OK</h1></body></html>" | sudo tee /var/www/ht
 cd
 rm -rf "$TEMP_DIR"
 
-echo "Space Invaders application installed successfully!"
+echo "Application installed successfully!"

@@ -21,3 +21,9 @@ variable "instance_type" {
   type        = string
   default     = "t2.micro"
 }
+
+variable "ami_name_pattern" {
+  description = "Pattern to use when searching for AMIs"
+  type        = string
+  default     = "space-invaders-ami-*"
+}

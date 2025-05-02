@@ -1,11 +1,11 @@
-# Find the latest Space Invaders AMI created by Packer
-data "aws_ami" "space_invaders" {
+# Find the latest AMI created by Packer
+data "aws_ami" "game_ami" {
   most_recent = true
-  owners      = ["self"]  # AMIs owned by your account
+  owners      = ["self"]
 
   filter {
     name   = "name"
-    values = ["space-invaders-ami-*"]  # Name pattern used in the Packer template
+    values = [var.ami_name_pattern]  # Name pattern set dynamically
   }
 
   filter {

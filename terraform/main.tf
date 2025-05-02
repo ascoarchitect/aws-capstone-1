@@ -53,7 +53,7 @@ module "compute" {
   project_name      = var.project_name
   environment       = var.environment
   instance_type     = var.instance_type
-  ami_id            = data.aws_ami.space_invaders.id
+  ami_id            = data.aws_ami.game_ami.id
   security_group_id = module.security.instance_sg_id
   vpc_id            = module.vpc.vpc_id
   subnet_ids        = module.vpc.private_subnets

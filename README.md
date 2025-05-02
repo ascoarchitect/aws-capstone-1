@@ -115,13 +115,31 @@ Select ```eu-west-1``` as the region and ```json``` as the output format.
 
 There is a demo ```terraform.tfvars``` file within the project which is to be used for test purposes. For best-practice security, this file should always be excluded from production repositories as they often contain sensitive information.
 
+## Multiple Game Deployments
+
+This project supports deployment of multiple game applications:
+
+1. **Space Invaders**: A classic arcade game
+2. **Retro Emulator**: A web-based retro game emulator
+
+You can specify which game to deploy by adding either `space` or `retro` to the deployment commands.
+
+An example Nintendo Entertainment System (NES) ROM for Legend of Zelda is available in the emulator-rom repo folder. When the website is deployed, you upload this ROM onto the website to load the game into the browser.
+
+Note: If you start your project build steps with one game type, you need to ensure that you use that game type for the whole project. Shoudl you wish to use the other game type then you need to destroy the resources first.
+
 ## Running the Project
 
-### Build Space Invaders AMI
+### Build Game AMI
 
 ```bash
-# This builds the AMI using Packer
-./scripts/deploy.sh --build-packer
+# Build Space Invaders AMI
+./scripts/deploy.sh --build-packer space
+
+# or
+
+# Build Retro Emulator AMI
+./scripts/deploy.sh --build-packer retro
 ```
 
 ### Deploy Test VM
@@ -129,8 +147,13 @@ There is a demo ```terraform.tfvars``` file within the project which is to be us
 Note: You will need to have created the AMI first before deploying the Test VM.
 
 ```bash
-# This deploys a test VM using the AMI
-./scripts/deploy.sh --test-vm
+# Test Space Invaders VM
+./scripts/deploy.sh --test-vm space
+
+# or
+
+# Test Retro Emulator VM
+./scripts/deploy.sh --test-vm retro
 ```
 
 This will:
@@ -145,7 +168,11 @@ This will:
 
 ```bash
 # This deploys the complete website with VPC, ALB, and ASG
-./scripts/deploy.sh --deploy-website
+./scripts/deploy.sh --deploy-website space
+
+# or
+
+./scripts/deploy.sh --deploy-website retro
 ```
 
 This creates:
