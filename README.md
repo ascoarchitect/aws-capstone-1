@@ -5,7 +5,7 @@ This project demonstrates the deployment of AWS infrastructure using Terraform a
 ## Project Structure
 
 ```
-aws-capstone/
+aws-capstone-1/
 ├── README.md
 ├── .gitignore
 ├── scripts/
