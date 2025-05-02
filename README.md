@@ -8,15 +8,20 @@ This project demonstrates the deployment of AWS infrastructure using Terraform a
 aws-capstone-1/
 ├── README.md
 ├── .gitignore
+├── emulator-roms/
+│   ├── Legend of Zelda.nes
+│   ├── Super Mario Bros.nes
+│   ├── Top Gun.nes
 ├── scripts/
 │   ├── setup-environment.sh      # Set up the environment
 │   └── deploy.sh                 # Deploy the infrastructure
 ├── packer/
-│   ├── space-invaders.pkr.hcl    # Packer template
+│   ├── game-ami.pkr.pkr.hcl      # Packer template
 │   └── scripts/
 │       └── setup.sh              # Installation script for the AMI
 └── terraform/
     ├── main.tf                   # Main Terraform configuration
+    ├── data.tf                   # AMI dynamic lookup
     ├── variables.tf              # Input variables
     ├── outputs.tf                # Output values
     ├── provider.tf               # Provider configuration

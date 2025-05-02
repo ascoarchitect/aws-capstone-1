@@ -214,7 +214,9 @@ if [ "$DESTROY" = true ]; then
         
         echo "Cleaning up temporary files..."
         rm -f "$PROJECT_ROOT/terraform/test-vm/"*.auto.tfvars
+        rm -f "$PROJECT_ROOT/terraform/test-vm/"*.tfplan
         rm -f "$PROJECT_ROOT/terraform/"*.auto.tfvars
+        rm -f "$PROJECT_ROOT/terraform/"*.tfplan
         rm -f "$PROJECT_ROOT/packer/"*.auto.pkrvars.hcl    
     else
         echo "Destroying $PROJECT_NAME infrastructure..."
@@ -242,7 +244,9 @@ if [ "$DESTROY" = true ]; then
         # Clean up temporary tfvars files for this deployment
         echo "Cleaning up temporary files..."
         rm -f "$PROJECT_ROOT/terraform/test-vm/test-vm.auto.tfvars"
+        rm -f "$PROJECT_ROOT/terraform/test-vm/*.tfplan"
         rm -f "$PROJECT_ROOT/terraform/terraform.auto.tfvars"
+        rm -f "$PROJECT_ROOT/terraform/*.tfplan"
         rm -f "$PROJECT_ROOT/packer/"*.auto.pkrvars.hcl
     fi
     
