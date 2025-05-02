@@ -124,14 +124,14 @@ There is a demo ```terraform.tfvars``` file within the project which is to be us
 
 This project supports deployment of multiple game applications:
 
-1. **Space Invaders**: A classic arcade game
-2. **Retro Emulator**: A web-based retro game emulator
+👾 **Space Invaders**: A classic arcade game
+🕹️ **Retro Emulator**: A web-based retro game emulator
 
 You can specify which game to deploy by adding either `space` or `retro` to the deployment commands.
 
-An example Nintendo Entertainment System (NES) ROM for Legend of Zelda is available in the emulator-rom repo folder. When the website is deployed, you upload this ROM onto the website to load the game into the browser.
+Example Nintendo Entertainment System (NES) ROMs are available in the emulator-rom repo folder. When the website is deployed, you upload a ROM onto the website to load the game into the browser.
 
-Note: If you start your project build steps with one game type, you need to ensure that you use that game type for the whole project. Shoudl you wish to use the other game type then you need to destroy the resources first.
+Note: If you start your project build steps with one game type, you need to ensure that you use that game type for the whole project. Should you wish to use the other game type then you need to destroy the resources first.
 
 ## Running the Project
 

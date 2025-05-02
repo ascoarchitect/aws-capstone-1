@@ -1,19 +1,3 @@
-# Find latest Space Invaders AMI built by Packer
-data "aws_ami" "space_invaders" {
-  most_recent = true
-  owners      = ["self"]
-
-  filter {
-    name   = "name"
-    values = ["space-invaders-ami-*"]
-  }
-
-  filter {
-    name   = "state"
-    values = ["available"]
-  }
-}
-
 # VPC Module
 module "vpc" {
   source = "./modules/vpc"
