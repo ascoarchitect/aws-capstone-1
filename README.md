@@ -48,7 +48,7 @@ Follow these steps to deploy an Amazon Linux 2 EC2 instance to run the project:
     - Network: Default VPC
     - Auto-assign Public IP: Enable
 7. Add storage (8 GB is sufficient)
-8. Add tags (Name: capstone-deployment)
+8. Add tags as required
 9. Allow wizard to create security group as recommended
 10. Proceed without key pair then launch instance
 11. Wait for the instance to initialise
