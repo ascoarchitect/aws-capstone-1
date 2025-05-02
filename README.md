@@ -16,7 +16,7 @@ aws-capstone-1/
 │   ├── setup-environment.sh      # Set up the environment
 │   └── deploy.sh                 # Deploy the infrastructure
 ├── packer/
-│   ├── game-ami.pkr.pkr.hcl      # Packer template
+│   ├── game-ami.pkr.hcl          # Packer template
 │   └── scripts/
 │       └── setup.sh              # Installation script for the AMI
 └── terraform/
