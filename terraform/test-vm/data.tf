@@ -5,7 +5,7 @@ data "aws_ami" "game_ami" {
 
   filter {
     name   = "name"
-    values = [var.ami_name_pattern]  # Name pattern set dynamically
+    values = [var.ami_name_pattern] # Name pattern set dynamically
   }
 
   filter {

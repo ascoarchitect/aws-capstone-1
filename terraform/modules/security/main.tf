@@ -29,7 +29,7 @@ module "instance_sg" {
       source_security_group_id = module.alb_sg.security_group_id
     }
   ]
-  
+
   # Allow outbound internet access
   egress_rules = ["all-all"]
 }

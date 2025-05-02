@@ -6,7 +6,7 @@ provider "aws" {
 resource "aws_instance" "test" {
   ami           = data.aws_ami.game_ami.id
   instance_type = var.instance_type
-  
+
   vpc_security_group_ids = [aws_security_group.test.id]
 
   tags = {
