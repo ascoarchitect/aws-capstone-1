@@ -68,7 +68,7 @@ sudo yum install -y git
 
 # Clone the repository
 git clone https://github.com/ascoarchitect/aws-capstone-1.git
-cd aws-capstone
+cd aws-capstone-1
 
 # Make scripts executable
 chmod +x scripts/setup-environment.sh scripts/deploy.sh
