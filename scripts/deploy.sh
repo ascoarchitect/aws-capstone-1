@@ -222,8 +222,11 @@ if [ "$DESTROY" = true ]; then
         echo "Destroying $PROJECT_NAME infrastructure..."
         
         # Create temporary tfvars files for the specific deployment
-        echo "project_name = \"$PROJECT_NAME\"" > "$PROJECT_ROOT/terraform/test-vm/test-vm.auto.tfvars"
-        echo "project_name = \"$PROJECT_NAME\"" > "$PROJECT_ROOT/terraform/terraform.auto.tfvars"
+        echo "project_name = \"$PROJECT_NAME\"
+        ami_name_pattern = \"$AMI_NAME_PATTERN\"" > "$PROJECT_ROOT/terraform/test-vm/test-vm.auto.tfvars"
+
+        echo "project_name = \"$PROJECT_NAME\"
+        ami_name_pattern = \"$AMI_NAME_PATTERN\"" > "$PROJECT_ROOT/terraform/terraform.auto.tfvars"
         
         # Check and destroy test VM for the specific deployment
         if [ -d "$PROJECT_ROOT/terraform/test-vm/.terraform" ]; then
