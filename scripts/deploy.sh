@@ -124,7 +124,7 @@ if [ "$DEPLOY_WEBSITE" = true ]; then
     cd "$PROJECT_ROOT/terraform"
     terraform init
     terraform plan -out=website.tfplan
-    terraform apply website.tfplan --auto-approve
+    terraform apply website.tfplan
     
     # Display outputs
     echo "Website infrastructure deployed successfully!"
